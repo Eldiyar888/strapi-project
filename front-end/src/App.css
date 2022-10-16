@@ -1,0 +1,30 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  background-color:slategray;
+}
+
+.item-wrapper {
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+  background-color:rgb(255, 255, 255);
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: calc(20% - 30px);
+  background-color: rgb(61, 142, 255);
+  margin: 5px;
+  padding: 10px;
+  border-radius: 5px;
+  word-wrap: break-word;
+}
