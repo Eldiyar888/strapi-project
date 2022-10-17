@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const Content = () => {
+const Product = () => {
     const [error, setError] = useState(null);
     const [product, setProduct] = useState([]);
+    console.log(product)
 
     useEffect(() => {
         axios.get('http://localhost:1337/api/products')
@@ -25,7 +26,7 @@ const Content = () => {
             <div className='item-wrapper'>
                 {
                     product.map((item) => (
-                        <div className='item'> <h2>{item.attributes.name.toUpperCase()}</h2> <p> <b><i>Описание:</i></b> {item.attributes.description}</p> <p> <b><i>Цена:</i></b> {item.attributes.price}</p> </div>
+                        <div className='item' key={item.id}> <h2>{item.attributes.name.toUpperCase()}</h2> <p> <b><i>Описание:</i></b> {item.attributes.description}</p> <p> <b><i>Цена:</i></b> {item.attributes.price}</p> </div>
                     ))
                 }
             </div>
@@ -33,4 +34,4 @@ const Content = () => {
     );
 };
 
-export default Content;
+export default Product;
